@@ -22,6 +22,12 @@ st.markdown("""
         font-size: 30px;
     }
     
+    h5 {
+        color: white;
+        text-align: center;
+        font-size: 10px;
+    }
+    
     .stButton button {
         background-color: linear-gradient(45deg, #bcbcbc, #cfe2f3);
         color: white;
@@ -63,10 +69,14 @@ st.markdown("""
 
 #title and description
 st.markdown("<h1>Unit Converter using Python and Streamlit</h1>", unsafe_allow_html=True)
-st.write("This is a simple unit converter application built using Python and Streamlit. It allows you to convert units to other units.")
+st.write("<h5>Convert various units seamlessly using this simple application.</h5>", unsafe_allow_html=True)
 
+st.write("")
 #sidebar menu
 conversion_option = st.sidebar.selectbox("Select the conversion option", ["Length", "Weight", "Temperature", "Area", "Volume"])
+
+st.write("")
+
 value = st.number_input("Enter the value", min_value=0.0, value=1.0, step=0.1)
 
 col1, col2 = st.columns(2)
@@ -179,6 +189,7 @@ if st.button("Convert"):
         result = convert_volume(value, from_unit, to_unit)
         
     st.markdown(f"<div class='result-box'>{value} {from_unit} = {result: .4f} {to_unit}</div>", unsafe_allow_html=True)
-    
+
+st.write("")
 #footer
 st.markdown("<div class='footer'>Developed by <a href='https://github.com/shayykh'>@shayykh</a></div>", unsafe_allow_html=True)
