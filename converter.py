@@ -123,7 +123,7 @@ def convert_length(value, from_unit, to_unit):
         "mi": 0.000621371,
         "yard": 1.09361,
     }
-    return value * length_factors[from_unit] / length_factors[to_unit]
+    return value * (length_factors[to_unit] / length_factors[from_unit])
 
 def convert_weight(value, from_unit, to_unit):
     weight_factors = {
